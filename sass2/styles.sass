@@ -1,0 +1,152 @@
+$font-stack: Inter, sans-serif
+$primary-color: #CCCCCC
+$small: 320px
+$medium: 900px
+
+@mixin theme ($theme:navigation)
+  height: 100%
+  border-right: 1px solid $primary-color
+
+.App 
+  font-family: $font-stack
+  text-align: left
+  display: flex
+  padding: 0px
+
+h1
+  font-size: 32px
+  line-height: 10px
+  @media screen and (max-width: $medium)
+    line-height: 32px
+
+.summit
+  line-height: 8px
+  
+img
+  display: flex
+
+nav
+  align-items: center
+  justify-content: center
+  @media screen and (max-width: $medium)
+    display: none
+
+.nav1
+  @include theme($theme:navigation)
+  width: 60px
+
+.nav2
+  @include theme($theme:navigation)
+  width: 200px
+
+.navp 
+  font-size: 10px
+
+.img-bottom
+  align-items: flex-end
+  padding: 10px
+
+.search
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  padding: 0px 5px
+  background-color: #F5F5F5
+  font-size: 12px
+
+.selector
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  color: #777777
+  font-weight: 600
+  padding: 0px 5px
+  font-size: 14px
+
+.active-select
+  color: #5C00DC
+  background-color: #5C00DC14
+  font-weight: 600
+  padding: 0px
+  border-radius: 4px
+  font-size: 14px
+
+.dropdown
+  color: #777777
+  font-weight: 600
+  padding-left: 32px
+  font-size: 14px
+  line-height: 5px
+
+.imgselector
+  width: 24px
+  height: 24px
+
+div
+  padding: 10px
+  text-align: left
+
+button
+  background-color: #5C00DC
+  padding: 8px 16px
+  border-radius: 4px
+  font-weight: 700
+  color: white
+  border: none
+
+hr
+  color: $primary-color
+
+.container
+  display: flex
+  margin: 0 10px
+  padding: 10px 30px
+  border: 1px solid $primary-color
+  border-radius: 4px
+  @media screen and (max-width: $medium)
+    flex-wrap: wrap
+
+.containersm
+  margin: 10px
+  padding: 10px 30px
+  border: 1px solid $primary-color
+  border-radius: 4px
+
+.containerh
+  margin: 10 10px
+  padding: 10px 30px
+  border-radius: 4px
+
+.add
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+
+.portal
+  display: flex
+
+
+.row
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  padding: 0px
+  > div[class*='w-']
+    box-sizing: border-box
+  > div:not([class*='w-'])
+    flex: 1
+  @for $i from 1 through 12
+    .w-#{$i}
+      flex-basis: $i / 12 * 100%
+    @each $sizeLabel, $value in (sm 480px, md 768px, lg 992px, xl 1200px)
+      .w-#{$sizeLabel}-#{$i}
+        flex-basis: 100%
+
+@each $sizeLabel, $value in (sm 480px, md 768px, lg 992px, xl 1200px)
+  @media only screen and (min-width: #{$value})
+    @for $i from 1 through 12
+      .row > .w-#{$sizeLabel}-#{$i}
+        flex-basis: $i / 12 * 100%
+    .container
+      width: if(index((sm 480px, md 768px, lg 992px, xl 1200px),$sizeLabel $value) > 2, $value, 99%)
+
