@@ -21,7 +21,7 @@ function Navbar1() {
   return (
     <nav>
       <div className="nav1">
-        <img src="rf.png" alt="rainfocus" />
+        <img src="rf.png" alt="image" />
         <br />
         <br />
         <img src="Icon.png" alt="icon" />
@@ -37,7 +37,7 @@ function Navbar2() {
   return (
     <nav>
       <div className="nav2">
-        <h4>RainFocus Summit</h4>
+        <h4>Summit</h4>
         <div className="row">
           <p className="navp">Lehi, Ut &nbsp; · &nbsp; </p>
           <p className="navp">December 15th</p>
@@ -93,7 +93,7 @@ function Summit() {
           <img src="icon-big.png" alt="icon large" />
         </div>
         <div className="w-8">
-          <h1>RainFocus Summit</h1>
+          <h1>Summit</h1>
           <p className="summit">December 15th</p>
           <p className="summit">Lehi, Utah</p>
         </div>
