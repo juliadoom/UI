@@ -1,0 +1,21 @@
+.main {
+ display: flex;
+ flex-wrap: nowrap;
+ justify-content: center !important;
+ width: 300px;
+}
+
+.widget1 {
+ display: inline-flex;
+ width: 100px;
+ height: 75px;
+}
+.content {
+  flex-wrap: wrap;
+}
+
+.widget2 {
+ position: fixed;
+ top: 0;
+ right: 0;
+}
