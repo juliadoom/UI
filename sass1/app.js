@@ -37,7 +37,7 @@ function Navbar2() {
   return (
     <nav>
       <div className="nav2">
-        <h4>RainFocus Summit</h4>
+        <h4>RF Summit</h4>
         <div className="row">
           <p className="navp">Lehi, Ut &nbsp; · &nbsp; </p>
           <p className="navp">December 15th</p>
